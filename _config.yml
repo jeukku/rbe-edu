@@ -1,9 +1,10 @@
-title: The Zeitgeist Movement
-subtitle: Shire chapter
+title: RBE Edu
+subtitle: "Learn the train of thought that will change the world."
+
 description: >- # this means to ignore newlines until "baseurl:"
   Template for the Zeigeist Movement Chapter site.
 author: Zeitgeist movement
-email: your-email@example.com
+email: juuso@vilmunen.net
 avatar: /assets/images/avatar.jpg
 
 # You'll want to customize url and baseurl for your own site:
