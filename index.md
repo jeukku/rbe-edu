@@ -3,10 +3,10 @@ layout: home
 bootstrap: true
 
 # title
-postnav_title: "The Zeitgeist Movement"
+postnav_title: "RBE Edu"
 
 # second title
-postnav_subtitle: "Shire Chapter"
+postnav_subtitle: "Learn the train of thought that will change the world."
 
 # home page header image
 header_image: "/assets/img/home-bg.jpg"
