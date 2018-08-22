@@ -44,9 +44,6 @@ show_posts_on_homepage: false
 # if true, links to events will be shown in home page
 show_events_on_homepage: false
 
-# if true, links to events will be shown in home page
-show_events_on_homepage: true
-
 defaults:
   - scope:
       path: "assets/img"
