@@ -11,6 +11,9 @@ avatar: /assets/images/avatar.jpg
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site
 
+#
+main_logo_small: /assets/img/main-logo-small.png
+
 assets:
     sources:
         - _assets/images          
