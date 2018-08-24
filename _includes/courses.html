@@ -1,0 +1,34 @@
+  <div class="row mb-2 courses">
+    {% for course in site.courses %}
+    {% if course.hidden==false %}
+    <div class="col-md-6">
+        
+	    <div class="card mb-4 box-shadow h-md-250 course-teaser">
+	      {% if course.thumbnail %} 
+	      <div class="thumbnail">
+	         <img src="/{{ course.thumbnail }}">
+	      </div>
+	      {% endif %}
+  		 	<header>
+	      	   <h3 class="mb-0">
+	              <a class="course-link" href="{{ course.url }}">
+	                {{ course.title }}
+	              </a>
+	           </h3>
+	            <p class="meta">
+	              {{ course.date | date: "%B %-d, %Y" }}
+	            </p>
+	          </header>
+
+	          <div class="excerpt">
+	              {{ course.excerpt }}
+	            <!--{{ course.content | strip_html | truncate: "250" }}-->
+	            <!--<a class="button" href="{{ course.url }}">
+	              {{ site.theme_settings.str_continue_reading }}
+	            </a>-->
+	          </div>
+	    </div>
+	</div>
+	{% endif %}
+    {% endfor %}
+  </div>
