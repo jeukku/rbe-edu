@@ -2,7 +2,7 @@
 layout: class
 
 # post title
-title: Sam Harris - Human Values
+title: An Intro. to a Resource-Based Economy [ TEDx - Peter Joseph ]
 
 # post author
 author: TZM
@@ -13,7 +13,8 @@ hidden: false
 # class values
 type_class: true
 topicid: tot-B
-video: https://www.youtube.com/embed/p6gyGI7sh1E
+video: https://www.youtube.com/embed/4mkRFCtl2MI
 
 ---
 
+Video should be fixed

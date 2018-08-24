@@ -2,7 +2,7 @@
 layout: class
 
 # post title
-title: Science Literacy | 1.0 Science Literacy Matters
+title: The Story Of Solutions
 
 # post author
 author: TZM
@@ -12,8 +12,9 @@ hidden: false
 
 # class values
 type_class: true
-topicid: tot-A
-video: https://www.youtube.com/embed/t1IWS7glGNE
+topicid: tot-B
+video: https://www.youtube.com/embed/cpkRvc-sOKk
 
 ---
 
+Video should be fixed

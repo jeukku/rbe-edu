@@ -2,7 +2,7 @@
 layout: class
 
 # post title
-title: Science Literacy | 2.1 Scientific Consensus - How It Changes
+title: Science Literacy | 2.2 Scientific Consensus - How It Changes
 
 # post author
 author: TZM
