@@ -23,30 +23,29 @@ layout: default
 
 </article>
 
-Topics with courseid {{ page.courseid }}
-<div class="row mb-2 courses">
-	{% for course in site.courses %} 
-	{% if course.hidden==false and course.type_topic and page.courseid == course.courseid %}
+<div class="row mb-2 topics">
+	{% for topic in site.courses %} 
+	{% if topic.hidden==false and topic.type_class and page.topicid == topic.topicid %}
 	<div class="col-md-6">
 
-		<div class="card mb-4 box-shadow h-md-250 course-teaser">
-			{% if course.thumbnail %}
+		<div class="card mb-4 box-shadow h-md-250 topic-teaser">
+			{% if topic.thumbnail %}
 			<div class="thumbnail">
-				<img src="/{{ course.thumbnail }}">
+				<img src="/{{ topic.thumbnail }}">
 			</div>
 			{% endif %}
 			<header>
 				<h3 class="mb-0">
-					<a class="course-link" href="{{ course.url }}"> {{ course.title }}
+					<a class="topic-link" href="{{ topic.url }}"> {{ topic.title }}
 					</a>
 				</h3>
-				<p class="meta">{{ course.date | date: "%B %-d, %Y" }}</p>
+				<p class="meta">{{ topic.date | date: "%B %-d, %Y" }}</p>
 			</header>
 
 			<div class="excerpt">
-				{{ course.excerpt }}
-				<!--{{ course.content | strip_html | truncate: "250" }}-->
-				<!--<a class="button" href="{{ course.url }}">
+				{{ topic.excerpt }}
+				<!--{{ topic.content | strip_html | truncate: "250" }}-->
+				<!--<a class="button" href="{{ topic.url }}">
 	              {{ site.theme_settings.str_continue_reading }}
 	            </a>-->
 			</div>
