@@ -23,29 +23,32 @@ layout: default
 
 </article>
 
-<div class="row mb-2 topics">
-	{% for topic in site.courses %} 
-	{% if topic.hidden==false and topic.type_class and page.topicid == topic.topicid %}
-	<div class="col-md-6">
+{% assign sortedtopicclasss = site.courses | sort: 'name' %} 
+
+<div class="row mb-2 classs">
+	{% for topicclass in sortedtopicclasss %} 
+	{% if topicclass.hidden==false and topicclass.type_class and page.topicid == topicclass.topicid %}
+	<div class="col-md-12 mb-4">
 
 		<div class="card mb-4 box-shadow h-md-250 topic-teaser">
-			{% if topic.thumbnail %}
+			{% if topicclass.thumbnail %}
 			<div class="thumbnail">
-				<img src="/{{ topic.thumbnail }}">
+				<img src="/{{ topicclass.thumbnail }}">
 			</div>
 			{% endif %}
 			<header>
 				<h3 class="mb-0">
-					<a class="topic-link" href="{{ topic.url }}"> {{ topic.title }}
-					</a>
+					<a class="class-link" href="{{ topicclass.url }}"> {{
+						topicclass.title }} </a>
 				</h3>
-				<p class="meta">{{ topic.date | date: "%B %-d, %Y" }}</p>
+				<p class="meta">{{ topicclass.date | date: "%B %-d, %Y" }}</p>
+				op
 			</header>
 
 			<div class="excerpt">
-				{{ topic.excerpt }}
-				<!--{{ topic.content | strip_html | truncate: "250" }}-->
-				<!--<a class="button" href="{{ topic.url }}">
+				{{ topicclass.excerpt }}
+				<!--{{ topicclass.content | strip_html | truncate: "250" }}-->
+				<!--<a class="button" href="{{ topicclass.url }}">
 	              {{ site.theme_settings.str_continue_reading }}
 	            </a>-->
 			</div>

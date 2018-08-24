@@ -3,10 +3,16 @@ layout: default
 
 ---
 
+	<style>
+	.site-header-slim {
+	  background: url('{{ site.baseurl }}{{ page.header_image }}') center center no-repeat scroll;
+	}
+	</style>
+
 <article {% if page.feature-img %}class="feature-image"{% endif %}>
-	<header id="main"
-		style="background-image: url('/{{ page.feature-img }}')">
-		<h1 id="{{ page.title | default: " " | cgi_escape }}" class="title">
+	<header class="site-header-slim" id="main"
+		style="background-image: url('{{site.baseurl}}{{ page.header-image }}')">
+		<h1 id="{{ page.title | default: " " | cgi_escape }}" class="title text-center">
 			{{ page.title }}</h1>
 
 		{% if page.subtitle %}
@@ -23,11 +29,10 @@ layout: default
 
 </article>
 
-Topics with courseid {{ page.courseid }}
-<div class="row mb-2 courses">
+<div class="row mb-0 courses">
 	{% for course in site.courses %} 
 	{% if course.hidden==false and course.type_topic and page.courseid == course.courseid %}
-	<div class="col-md-6">
+	<div class="col-md-12 mb-4">
 
 		<div class="card mb-4 box-shadow h-md-250 course-teaser">
 			{% if course.thumbnail %}
