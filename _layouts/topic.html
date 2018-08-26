@@ -29,36 +29,38 @@ layout: default
 
 </article>
 
-{% assign sortedtopicclasss = site.courses | sort: 'name' %} 
+{% assign sortedpieces = site.courses | sort: 'name' %} 
 
-<div class="row mb-2 classs">
-	{% for topicclass in sortedtopicclasss %} 
-	{% if topicclass.hidden==false and topicclass.type_class and page.topicid == topicclass.topicid %}
-	<div class="col-md-12">
-
-		<div class="card box-shadow h-md-250 class-teaser">
-			{% if topicclass.thumbnail %}
+<div class="classs">
+	{% for piece in sortedpieces %} {% if piece.hidden==false and piece.type_class and page.topicid == piece.topicid %}
+	<div class="row piece-row">
+		<div class="col-md-12 card box-shadow piece-teaser">
+			{% if piece.thumbnail %}
 			<div class="thumbnail">
-				<img src="/{{ topicclass.thumbnail }}">
+				<img src="/{{ piece.thumbnail }}">
 			</div>
 			{% endif %}
-			<header>
+			<div class="card-header">
 				<h3 class="mb-0">
-					<a class="class-link" href="{{ topicclass.url }}"> {{
-						topicclass.title }} </a>
+					<a class="piece-link" href="{{ piece.url }}"> {{ piece.title }}
+					</a>
 				</h3>
-				<p class="meta">{{ topicclass.date | date: "%B %-d, %Y" }}</p>
-			</header>
-
-			<div class="excerpt">
-				{{ topicclass.excerpt }}
-				<!--{{ topicclass.content | strip_html | truncate: "250" }}-->
-				<!--<a class="button" href="{{ topicclass.url }}">
-	              {{ site.theme_settings.str_continue_reading }}
-	            </a>-->
+				<div class="meta">{{ piece.date | date: "%B %-d, %Y" }}</div>
+			</div>
+			<div class="piece-teaser-block">
+				<div class="row">
+					<div class="excerpt col-md-6">
+						{{ piece.excerpt }}
+						<!--{{ piece.content | strip_html | truncate: "250" }}-->
+						<!--<a class="button" href="{{ piece.url }}">
+		              {{ site.theme_settings.str_continue_reading }}
+		            </a>-->
+					</div>
+					<div class="col-md-6">
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
-	{% endif %} 
-	{% endfor %}
+	{% endif %} {% endfor %}
 </div>

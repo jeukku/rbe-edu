@@ -6,24 +6,22 @@
 	font-size: 200%;
 }
 
-.topic-teaser {
-	margin-top: 10x;
+.piece-teaser {
 	padding: 0px;
 }
 
-.class-teaser .meta {
+.piece-row {
+	margin-top: 20px;	
+}
+
+.piece-teaser .meta {
   font-size: 80%;
 }
 
-.class-link {
+.piece-link {
 	 color: #343a40!important;
 }
 
-.card-block {
+.piece-teaser-block {
 	padding: 20px;
-}
-
-.topic-link {
-	 color: #343a40!important;
-}
-
+}: 
