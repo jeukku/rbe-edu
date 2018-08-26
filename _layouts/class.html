@@ -1,16 +1,17 @@
 --- 
-layout: default
+layout: default 
 
 ---
 
-<article {% if page.feature-img %}class="feature-image"{% endif %}>
+<article class="class {% if page.feature-img %}feature-image{% endif %}">
 	<header id="main"
 		style="background-image: url('/{{ page.feature-img }}')">
-		{% for topic in site.courses %} 
-			{% if topic.type_topic and page.topicid == topic.topicid %}
-				<div class="class-back-link">Part of topic <a href="{{ topic.url }}">{{ topic.title }}</a></div>
-			{% endif %}
-		{% endfor %}
+		{% for topic in site.courses %} {% if topic.type_topic and
+		page.topicid == topic.topicid %}
+		<div class="class-back-link">
+			Part of topic <a href="{{ topic.url }}">{{ topic.title }}</a>
+		</div>
+		{% endif %} {% endfor %}
 
 		<h1 id="{{ page.title | default: " " | cgi_escape }}" class="title">
 			{{ page.title }}</h1>
@@ -20,10 +21,14 @@ layout: default
 		{% endif %}
 
 	</header>
-	<section class="post-content">
-		<iframe width="640" height="390" src="{{ page.video }}"
-			frameborder="0" allow="autoplay; encrypted-media" allowFullScreen></iframe>
-		<div class="bootstrap-iso">{{ content }}</div>
-	</section>
 
+	<div class="row">
+		<div
+			class="col-md-12 class-video embed-responsive embed-responsive-16by9">
+			<iframe class="embed-responsive-item" width="640" height="390"
+				src="{{ page.video }}" frameborder="0"
+				allow="autoplay; encrypted-media" allowFullScreen></iframe>
+			<div class="bootstrap-iso">content {{ content }}</div>
+		</div>
+	</div>
 </article>
