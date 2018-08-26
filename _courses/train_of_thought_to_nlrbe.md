@@ -4,10 +4,6 @@ layout: course
 #title
 title: Train of thought to NL/RBE
 
-# banner image
-header_image: "/assets/img/banner.png"
-
-
 # thumbnail
 thumbnail: /assets/img/rbe-edu-main-logo.png
 
