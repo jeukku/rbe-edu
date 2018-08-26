@@ -15,3 +15,9 @@ type_topic: true
 topicid: tot-A
 courseid: tot
 ---
+
+This will be shown in the excerpt.
+
+<!--more-->
+
+More text that will be shown in the topic -page.

@@ -6,3 +6,24 @@
 	font-size: 200%;
 }
 
+.topic-teaser {
+	margin-top: 10x;
+	padding: 0px;
+}
+
+.class-teaser .meta {
+  font-size: 80%;
+}
+
+.class-link {
+	 color: #343a40!important;
+}
+
+.card-block {
+	padding: 20px;
+}
+
+.topic-link {
+	 color: #343a40!important;
+}
+

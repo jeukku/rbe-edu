@@ -29,34 +29,37 @@ layout: default
 
 </article>
 
-<div class="row mb-0 courses">
-	{% for course in site.courses %} 
-	{% if course.hidden==false and course.type_topic and page.courseid == course.courseid %}
-	<div class="col-md-12 mb-4">
+<div class="mb-0 topics">
+	{% for topic in site.courses %} {% if topic.hidden==false and
+	topic.type_topic and page.courseid == topic.courseid %}
+	<div class="row card box-shadow">
 
-		<div class="card mb-4 box-shadow h-md-250 course-teaser">
-			{% if course.thumbnail %}
+		<div class="col-md-12 h-md-250 topic-teaser">
+			{% if topic.thumbnail %}
 			<div class="thumbnail">
-				<img src="/{{ course.thumbnail }}">
+				<img src="/{{ topic.thumbnail }}">
 			</div>
 			{% endif %}
-			<header>
+			<div class="card-header">
 				<h3 class="mb-0">
-					<a class="course-link" href="{{ course.url }}"> {{ course.title }}
+					<a class="topic-link" href="{{ topic.url }}"> {{ topic.title }}
 					</a>
 				</h3>
-				<p class="meta">{{ course.date | date: "%B %-d, %Y" }}</p>
-			</header>
-
-			<div class="excerpt">
-				{{ course.excerpt }}
-				<!--{{ course.content | strip_html | truncate: "250" }}-->
-				<!--<a class="button" href="{{ course.url }}">
-	              {{ site.theme_settings.str_continue_reading }}
-	            </a>-->
+				<div class="meta">{{ topic.date | date: "%B %-d, %Y" }}</div>
+			</div>
+			<div class="card-block">
+				<div class="row">
+					<div class="excerpt col-md-6">
+						{{ topic.excerpt }}
+						<!--{{ topic.content | strip_html | truncate: "250" }}-->
+						<!--<a class="button" href="{{ topic.url }}">
+		              {{ site.theme_settings.str_continue_reading }}
+		            </a>-->
+					</div>
+					<div class="col-md-6">JEE</div>
+				</div>
 			</div>
 		</div>
 	</div>
-	{% endif %} 
-	{% endfor %}
+	{% endif %} {% endfor %}
 </div>

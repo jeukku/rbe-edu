@@ -4,7 +4,7 @@
 	course.type_course %}
 	<div class="col-md-12 course row">
 
-		<div class="card mb-4 box-shadow h-md-250 course-teaser">
+		<div class="card box-shadow h-md-250 course-teaser">
 			<div class="row col-md-12">
 				{% if course.thumbnail %}
 					<img class="col-md-4" src="{{ site.baseurl }}{{ course.thumbnail }}">
@@ -15,7 +15,7 @@
 						<a class="course-link" href="{{ course.url }}"> {{
 							course.title }} </a>
 					</header>
-					<p class="meta">{{ course.date | date: "%B %-d, %Y" }}</p>
+					<div class="meta">{{ course.date | date: "%B %-d, %Y" }}</div>
 
 					<div class="excerpt">
 						{{ course.excerpt }}
