@@ -55,8 +55,10 @@ layout: default
 		              {{ site.theme_settings.str_continue_reading }}
 		            </a>-->
 					</div>
-					<div class="col-md-6">
-						<h4>Classes</h4>
+					<div class="col-md-6 classes-list-in-course">
+						<div class="row">
+							<h4 class="classes-list-title">Classes</h4>
+						</div>
 						{% for pclass in site.courses %} 
 						{% if pclass.hidden==false and pclass.type_class and piece.topicid == pclass.topicid %}
 						<div class="row">
