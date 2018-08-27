@@ -3,22 +3,26 @@ layout: default
 
 ---
 
-<article {% if page.feature-img %}class="feature-image"{% endif %}>
-	<header class="site-header-slim" id="main" 
-		{% if page.header_image %}
-			style="background-image: url('{{site.baseurl}}/{{ page.header_image }}')" 
-		{% else %}
-			style="background-image: url('{{site.baseurl}}/assets/img/blue-skies-green-fields-hd-wallpaper.jpg')";
-		{% endif %}>
-		
-		<h1 id="{{ page.title | default: " " | cgi_escape }}" class="title text-center">
-			{{ page.title }}</h1>
+<div class="row">
+	<div class="col-md-12 site-header-slim header"
+			{% if page.header_image %}
+				style="background-image: url('{{site.baseurl}}/{{ page.header_image }}')" 
+			{% else %}
+				style="background-image: url('{{site.baseurl}}/assets/img/blue-skies-green-fields-hd-wallpaper.jpg')";
+			{% endif %}>
+			
+			<h1 id="{{ page.title | default: " " | cgi_escape }}" class="title text-center">
+				{{ page.title }}</h1>
+	
+			{% if page.subtitle %}
+			<h2 class="subtitle">{{ page.subtitle }}</h2>
+			{% endif %}
+	</div>
+</div>
 
-		{% if page.subtitle %}
-		<h2 class="subtitle">{{ page.subtitle }}</h2>
-		{% endif %}
-	</header>
+<div class="row"><h1>Content</h1></div>
 
+<div class="row">
 	<section class="post-content">
 		{% if page.bootstrap %}
 		<div class="bootstrap-iso">{% endif %} {{ content }} {% if
@@ -26,9 +30,10 @@ layout: default
 		{% endif %}
 	</section>
 
-</article>
+</div>
 
 <div class="mb-0 topics">
+	<div class="row"><h1>Topics</h1></div>
 	{% for piece in site.courses %} {% if piece.hidden==false and
 	piece.type_topic and page.courseid == piece.courseid %}
 	<div class="row piece-row">

@@ -3,36 +3,30 @@ layout: default
 
 ---
 
-<article {% if page.feature-img %}class="feature-image"{% endif %}>
-	<header id="main"
-		{% if page.header_image %}
-			style="background-image: url('{{site.baseurl}}/{{ page.header_image }}')" 
-		{% else %}
-			style="background-image: url('{{site.baseurl}}/assets/img/blue-skies-green-fields-hd-wallpaper.jpg')";
-		{% endif %}>
-
-		{% for course in site.courses %} 
-			{% if course.type_course and page.courseid == course.courseid %}
-				<div class="topic-back-link">Part of course <a href="{{ course.url }}">{{ course.title }}</a></div>
+<div class="row">
+	<div class="col-md-12 site-header-slim header"
+			{% if page.header_image %}
+				style="background-image: url('{{site.baseurl}}/{{ page.header_image }}')" 
+			{% else %}
+				style="background-image: url('{{site.baseurl}}/assets/img/blue-skies-green-fields-hd-wallpaper.jpg')";
+			{% endif %}>
+	
+			{% for course in site.courses %} 
+				{% if course.type_course and page.courseid == course.courseid %}
+					<div class="topic-back-link">Part of course <a href="{{ course.url }}">{{ course.title }}</a></div>
+				{% endif %}
+			{% endfor %}
+			
+			<h1 id="{{ page.title | default: " " | cgi_escape }}" class="title text-center">
+				{{ page.title }}</h1>
+	
+			{% if page.subtitle %}
+			<h2 class="subtitle">{{ page.subtitle }}</h2>
 			{% endif %}
-		{% endfor %}
-		
-		<h1 id="{{ page.title | default: " " | cgi_escape }}" class="title">
-			{{ page.title }}</h1>
+	</div>
+</div>
 
-		{% if page.subtitle %}
-		<h2 class="subtitle">{{ page.subtitle }}</h2>
-		{% endif %}
-
-	</header>
-	<section class="post-content">
-		{% if page.bootstrap %}
-		<div class="bootstrap-iso">{% endif %} {{ content }} {% if
-			page.bootstrap %}</div>
-		{% endif %}
-	</section>
-
-</article>
+<div class="row"><h1>Content</h1></div>
 
 {% assign sortedpieces = site.courses | sort: 'name' %} 
 
